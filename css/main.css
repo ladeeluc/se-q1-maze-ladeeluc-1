@@ -1,2 +1,42 @@
-
 /*  Put your CSS Here */
+
+
+/* #maze {
+    display: flex;
+} */
+
+#wall {
+    width: 25px;
+    background-color: aqua;
+    height: 25px;
+    margin: 2px;
+    display: inline-block;
+}
+
+#empty {
+    width: 25px;
+    background-color: white;
+    height: 25px;
+    margin: 2px;
+    display: inline-block;
+}
+
+#start {
+    width: 25px;
+    background-color: red;
+    height: 25px;
+    margin: 2px;
+    display: inline-block;
+}
+
+#move {
+    width: 25px;
+    background-color: red;
+    height: 25px;
+    margin: 2px;
+    display: inline-block;
+}
+
+
+/* font-family: 'Gill Sans';
+font-size: large; */
