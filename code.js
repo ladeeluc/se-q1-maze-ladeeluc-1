@@ -8,6 +8,8 @@ let goTime = {
     y: 0
 
 }
+let boxTop = 200; //
+let boxLeft = 25; //CSS
 
 const map = [
     "WWWWWWWWWWWWWWWWWWWWW",
@@ -58,6 +60,8 @@ function movingInMaze() { //outer wall
                     start.setAttribute("id", "start")
                     game.append(start)
                     start.append(runTime)
+                        //runTime.append(goTime)
+
                     break;
 
                 case "F":
@@ -85,6 +89,9 @@ function keyEvent(evt) {
                 goTime.x + 1 != map.length // needs to look at later??
             ) {
                 goTime.x += 1;
+                boxTop += 30
+
+
             }
             break;
         case "ArrowUp":
@@ -94,43 +101,43 @@ function keyEvent(evt) {
                 goTime.x - 1 != map.length
             ) {
                 goTime.x -= 1;
+                boxTop -= 19
             }
 
             break;
-        case "ArrowLeft":
+        case "ArrowRight":
             if (
                 map[goTime.x][goTime.y - 1] != 'W' &&
                 goTime.y - 1 != map.length
             ) {
                 goTime.y -= 1;
+                boxLeft += 10
             }
             break;
-        case "ArrowRight":
+        case "ArrowLeft":
             if (
                 map[goTime.x][goTime.y + 1] != 'W' &&
                 goTime.y + 1 != map.length
             ) {
                 goTime.y += 1;
+                boxLeft -= 20
             }
             break;
 
     }
-
+    document.getElementById("player").style.top = boxTop + "px"; /*pushes down: when + = dwn, when - = pull up*/
+    document.getElementById("player").style.left = boxLeft + "px"; //pushes right: when + = push right, when - = pull left
 }
 
 document.addEventListener("keydown", keyEvent)
 
 
-/** ideas to move player through empty space: 
- *1) create array with empty spaces,
- *  loop through white space to 
- * push into  each empty space until until finsh case
- * 
- * 
- * 2)another idea let player move by skipping space to go to next space 
- * if evaluated to be an empty space, need to adjust length issue d/t 
- * corner of maze sharing index at 0 on x and y axis,  need every move to arrow right*/
 
+
+/** get ble box to on red square-means in CSS add top = 200-40 px  and left = 5-10 px, 
+ * then two values, needs to make player ht and width same as wall 
+ * then JS = var boxtop adn box left needs to match intial values of player top and player left in CSS
+ * change incremention in switch statment usually 10 - 20 - last */
 
 /* notes from Noel(tutor):pull and adjust where goTime.a and goTime.b - 
 think of way to call for it move, from one square to
