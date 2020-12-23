@@ -3,7 +3,11 @@ let runTime = document.createElement("div")
 runTime.setAttribute('id', 'player')
 game.append(runTime)
 
-let goTime;
+let goTime = {
+    x: 9,
+    y: 0
+
+}
 
 const map = [
     "WWWWWWWWWWWWWWWWWWWWW",
@@ -28,7 +32,7 @@ function movingInMaze() { //outer wall
 
     for (let rows = 0; rows < map.length; rows++) {
         for (let columns = 0; columns < map[rows].length; columns++) {
-            goTime = { x: rows, y: columns } //movement
+            //goTime = { x: rows, y: columns } //movement
             if (map[rows][columns] === "W") {
                 let wall = document.createElement("div")
                 wall.dataset.x = rows
@@ -117,7 +121,7 @@ function keyEvent(evt) {
 document.addEventListener("keydown", keyEvent)
 
 
-/** ideas to move player through whitspace: 
+/** ideas to move player through empty space: 
  *1) create array with empty spaces,
  *  loop through white space to 
  * push into  each empty space until until finsh case
@@ -125,7 +129,7 @@ document.addEventListener("keydown", keyEvent)
  * 
  * 2)another idea let player move by skipping space to go to next space 
  * if evaluated to be an empty space, need to adjust length issue d/t 
- * corner of maze sharing index at 0 on x and y axis, need every move to arrow right*/
+ * corner of maze sharing index at 0 on x and y axis,  need every move to arrow right*/
 
 
 /* notes from Noel(tutor):pull and adjust where goTime.a and goTime.b - 
