@@ -117,19 +117,36 @@ function keyEvent(evt) {
 document.addEventListener("keydown", keyEvent)
 
 
-/*pull and adjust where goTime.a and goTime.b - 
+/** ideas to move player through whitspace: 
+ *1) create array with empty spaces,
+ *  loop through white space to 
+ * push into  each empty space until until finsh case
+ * 
+ * 
+ * 2)another idea let player move by skipping space to go to next space 
+ * if evaluated to be an empty space, need to adjust length issue d/t 
+ * corner of maze sharing index at 0 on x and y axis, need every move to arrow right*/
+
+
+/* notes from Noel(tutor):pull and adjust where goTime.a and goTime.b - 
 think of way to call for it move, from one square to
  another then leave space,never let x and y got to !-1, dwn map length needs to b changed 
  to equal hortizal length for right, arraow right needs to be every space*/
 
-/* Movement can be performed a couple different ways: 
-In the case of 3A, change the absolute position of the player DIV. 
-Or, in the case of 3B, append the player DIV to the next cell DIV. 
-(You could use "document.querySelector()", and the CSS selector for attributes to get 
-the next cell element by the indexes you set on it via data attributes.)
+/**rubric for assignment
+ * This criterion is linked to a Learning OutcomeMaze and player are displayed on the page, and the player starts on the start square.
+3.0 pts
+This criterion is linked to a Learning OutcomePlayer can be moved through the maze by arrow keys.
+3.0 pts
+This criterion is linked to a Learning OutcomePlayer cannot move onto walls or outside of the maze.
+3.0 pts
+This criterion is linked to a Learning OutcomeUser is notified once the player reaches the finish square (no alert or console.log).
+1.0 pts
+Total Points: 10.0
+ */
 
 
-  
+
 
 /*Sanitize input
 //Put data into a data structure
