@@ -5,7 +5,7 @@
     display: flex;
 } */
 
-#wall {
+.wall {
     width: 25px;
     background-color: aqua;
     height: 25px;
@@ -13,7 +13,7 @@
     display: inline-block;
 }
 
-#empty {
+.empty {
     width: 25px;
     background-color: white;
     height: 25px;
@@ -21,9 +21,25 @@
     display: inline-block;
 }
 
+#player {
+    width: 10px;
+    background-color: dodgerblue;
+    height: 10px;
+    margin: 2px;
+    display: inline-block;
+}
+
 #start {
     width: 25px;
     background-color: red;
+    height: 25px;
+    margin: 2px;
+    display: inline-block;
+}
+
+#finish {
+    width: 25px;
+    background-color: rgb(88, 128, 10);
     height: 25px;
     margin: 2px;
     display: inline-block;
