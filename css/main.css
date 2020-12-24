@@ -1,3 +1,18 @@
+#maze {
+    line-height: 0px;
+}
+
+#winner {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: url(/css/Assets/trophy.jpg);
+    left: auto;
+    top: auto;
+    max-width: 100%;
+    background-size: contain;
+}
+
 .cell {
     width: 25px;
     height: 25px;

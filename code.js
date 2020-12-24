@@ -15,7 +15,7 @@ let goTime = {
 
 }
 
-let boxTop = 305; //
+let boxTop = 269; //
 let boxLeft = 8; //CSS
 
 const map = [
@@ -37,7 +37,7 @@ const map = [
 ];
 
 
-function movingInMaze() { //outer wall
+function loadingInMaze() { //outer wall
 
     for (let rows = 0; rows < map.length; rows++) {
         for (let columns = 0; columns < map[rows].length; columns++) {
@@ -56,9 +56,6 @@ function movingInMaze() { //outer wall
                 empty.setAttribute("class", "empty")
                 empty.classList.add("cell")
                 game.append(empty)
-
-
-
             }
             switch ((map[rows][columns])) {
                 case "S":
@@ -69,8 +66,6 @@ function movingInMaze() { //outer wall
                     start.classList.add("cell")
                     game.append(start)
                     start.append(runTime)
-
-
                     break;
 
                 case "F":
@@ -88,15 +83,17 @@ function movingInMaze() { //outer wall
         }
         game.append(document.createElement("br"))
     }
+    document.getElementById("player").style.top = boxTop + "px"; /*pushes down: when + = dwn, when - = pull up*/
+    document.getElementById("player").style.left = boxLeft + "px"; //pushes right: when + = push right, when - = pull left
 }
-movingInMaze()
+loadingInMaze()
 
 function keyEvent(evt) {
     switch (evt.code) {
         case "ArrowDown":
             if (
                 map[goTime.x + 1][goTime.y] != 'W' &&
-                goTime.x + 1 != map.length // needs to look at later??
+                goTime.x + 1 != map.length
             ) {
                 console.log("  this is correct")
                 goTime.x += 1;
@@ -134,6 +131,12 @@ function keyEvent(evt) {
                 boxLeft += 29
             }
             break;
+    }
+    if (map[goTime.x][goTime.y] === "F") {
+        let youWinner = document.createElement("div")
+        youWinner.setAttribute("id", "winner")
+        game.append(youWinner)
+
 
     }
     document.getElementById("player").style.top = boxTop + "px"; /*pushes down: when + = dwn, when - = pull up*/
@@ -158,21 +161,8 @@ think of way to call for it move, from one square to
  
  create if statment for finish in arrow right if it hits finish write it's done, then display*/
 
-/**rubric for assignment
- * /This criterion is linked to a Learning OutcomeMaze and player are displayed on the page, and the player starts on the start square.
-3.0 pts
-/This criterion is linked to a Learning OutcomePlayer can be moved through the maze by arrow keys.
-3.0 pts
-This criterion is linked to a Learning OutcomePlayer cannot move onto walls or outside of the maze.
-3.0 pts
-This criterion is linked to a Learning OutcomeUser is notified once the player reaches the finish square (no alert or console.log).
-1.0 pts
-Total Points: 10.0
- */
-
-
-
-
 /*Sanitize input
 //Put data into a data structure
 //Alter data into required format */
+
+//Sources: Krystal Briggs(SE Facilator),Nathan Hatch - Martinez (Senior SE - Bounteous), Noel Kling(SE tutor), Meghan Ramey(SE tutor), John Anderson(SE study group tutor))
