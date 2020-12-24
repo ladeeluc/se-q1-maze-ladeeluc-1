@@ -1,57 +1,44 @@
-.wall {
+.cell {
     width: 25px;
-    background-color: aqua;
     height: 25px;
     margin: 2px;
     display: inline-block;
 }
 
+.wall {
+    background-color: aqua;
+}
+
 .empty {
-    width: 25px;
     background-color: white;
+}
+
+#player {
+    background-color: dodgerblue;
+    position: absolute;
+    top: 305px;
+    left: 8px;
+}
+
+#start {
+    background-color: red;
+}
+
+#finish {
+    background-color: rgb(88, 128, 10);
+}
+
+
+/* #move {
+    width: 25px;
+    background-color: red;
     height: 25px;
     margin: 2px;
     display: inline-block;
-}
+} */
 
 
 /** CSS get ble box to on red square-means in CSS add top = 200-400 px  and left = 5-10 px, 
  * then two values, needs to make player ht and width same as wall 
  * then JS = var boxtop and box left needs to match intial values of player top and player left in CSS
  * change incremention in switch statment usually 10 - 20 - last */
-
-#player {
-    width: 25px;
-    background-color: dodgerblue;
-    height: 10px;
-    margin: 2px;
-    display: inline-block;
-    position: absolute;
-    top: 312px;
-    left: 5px;
-    width: 25px;
-}
-
-#start {
-    width: 25px;
-    background-color: red;
-    height: 25px;
-    margin: 2px;
-    display: inline-block;
-}
-
-#finish {
-    width: 25px;
-    background-color: rgb(88, 128, 10);
-    height: 25px;
-    margin: 2px;
-    display: inline-block;
-}
-
-#move {
-    width: 25px;
-    background-color: red;
-    height: 25px;
-    margin: 2px;
-    display: inline-block;
-}
