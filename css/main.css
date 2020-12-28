@@ -3,14 +3,19 @@
 }
 
 #winner {
-    width: 100px;
-    height: 100px;
+    background-size: contain;
+    width: 150px;
+    height: 175px;
     position: absolute;
     left: auto;
     top: auto;
     max-width: 100%;
     background-size: contain;
+<<<<<<< HEAD
+    background: url(./Assets/trophyNoBkgd.png);
+=======
     background: url(./Assets/trophy.jpg);
+>>>>>>> 1f902894118b48eaa3adac08812aeee9a63a16d3
 }
 
 .cell {
