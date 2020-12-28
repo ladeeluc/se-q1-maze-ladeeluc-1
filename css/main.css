@@ -6,11 +6,11 @@
     width: 100px;
     height: 100px;
     position: absolute;
-    background: url(/css/Assets/trophy.jpg);
     left: auto;
     top: auto;
     max-width: 100%;
     background-size: contain;
+    background: url(./Assets/trophy.jpg);
 }
 
 .cell {
